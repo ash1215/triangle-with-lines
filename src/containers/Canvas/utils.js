@@ -1,14 +1,16 @@
 export const CONSTANTS = {
-    GRID_UNIT: 5,
-    CANVAS_WIDTH: 500,
-    CANVAS_HEIGHT: 500,
-    ARC_RADIUS: 25,
-}
+  GRID_UNIT: 5,
+  CANVAS_WIDTH: 500,
+  CANVAS_HEIGHT: 500,
+  ARC_RADIUS: 25,
+  PROXIMITY_FACTOR: 2,
+};
 
 export const isPointCloseToVertex = (x, y, vertex) => {
   if (!x || !y || !vertex) return false;
   return (
-    Math.abs(x - vertex.x) <= CONSTANTS.GRID_UNIT && Math.abs(y - vertex.y) <= CONSTANTS.GRID_UNIT
+    Math.abs(x - vertex.x) <= CONSTANTS.GRID_UNIT * PROXIMITY_FACTOR &&
+    Math.abs(y - vertex.y) <= CONSTANTS.GRID_UNIT * PROXIMITY_FACTOR
   );
 };
 
