@@ -219,9 +219,7 @@ function Canvas({ lineSelected, setLineSelected }) {
 
   const handleCanvasTouchStart = (event) => {
     event.preventDefault();
-
     const touch = event.touches[0];
-    console.log({ touchstart: touch });
     handleCanvasMouseDown(touch);
   };
 
@@ -234,14 +232,7 @@ function Canvas({ lineSelected, setLineSelected }) {
 
   const handleCanvasTouchEnd = (event) => {
     event.preventDefault();
-    const touch = event.touches[0];
-    console.log({ touch });
     handleCanvasMouseUp(lastTouch);
-  };
-
-  const handleCanvasTouchCancel = (event) => {
-    event.preventDefault();
-    handleCanvasMouseUp();
   };
 
   return (
@@ -257,7 +248,6 @@ function Canvas({ lineSelected, setLineSelected }) {
         onTouchStart={handleCanvasTouchStart}
         onTouchMove={handleCanvasTouchMove}
         onTouchEnd={handleCanvasTouchEnd}
-        onTouchCancel={handleCanvasTouchCancel}
       />
     </FlexLayout>
   );
