@@ -9,8 +9,8 @@ export const CONSTANTS = {
 export const isPointCloseToVertex = (x, y, vertex) => {
   if (!x || !y || !vertex) return false;
   return (
-    Math.abs(x - vertex.x) <= CONSTANTS.GRID_UNIT * PROXIMITY_FACTOR &&
-    Math.abs(y - vertex.y) <= CONSTANTS.GRID_UNIT * PROXIMITY_FACTOR
+    Math.abs(x - vertex.x) <= CONSTANTS.GRID_UNIT * CONSTANTS.PROXIMITY_FACTOR &&
+    Math.abs(y - vertex.y) <= CONSTANTS.GRID_UNIT * CONSTANTS.PROXIMITY_FACTOR
   );
 };
 
